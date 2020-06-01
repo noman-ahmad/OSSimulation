@@ -18,7 +18,7 @@ Instructions on Running Program:
 1. Give desired RAM and Hard Disks to be simulated as asked (max size depends on size_t limit on architechture)
 2. Start Inputting A Series of Following Commands To Simulate the OS (capitals matter): 
 	a. A size (where size is a value within size_t ranges): create a new common process that needs to use "size" memory.
-        b. AR size (where size is a value within size_t ranges): create a new real-time (priority) process that needs to use "size" memory. 
+        b. AR size (where size is a value within size_t ranges): create a new real-time process that needs to use "size" memory. 
         c. Q : end time slice for currently running process. 
         d. t : terminate the current running process.
         e. d number (where number is a value within size_t ranges): The process that currently uses the 
