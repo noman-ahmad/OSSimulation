@@ -86,6 +86,9 @@ public:
   // Method To Remove a Process from Disk
   // @param: number of disk to remove from
   Process* RemoveDiskProcess(size_t diskNum);
+  // Method to Get the Number of Hard Disks in System
+  // @returns the length of the mDisks member
+  size_t GetNumDisks() const;
   // Method To Insert a Process Into RAM
   // @param: pointer to process to insert into RAM
   void InsertToRam(Process *pProcess);

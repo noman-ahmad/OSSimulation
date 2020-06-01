@@ -181,6 +181,10 @@ void MemoryManager::InsertToRam(Process *pProcess){
   }
 }
 
+size_t MemoryManager::GetNumDisks() const{
+  return mDisks.size();
+}
+
 Process* MemoryManager::RemoveFromRam(Process *pProcess){
   Process *pto_return;
   if(pProcess != nullptr){

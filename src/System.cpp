@@ -34,13 +34,17 @@ void OperatingSystem::ShowCpu() const{
 }
 // Dequeue's current process from cpu and insert's into disk queue (or disk)
 void OperatingSystem::RequestHardDisk(size_t diskNum){
-  Process *p_process = mScheduler.DequeueProcess();
-  mMemManager.InsertDiskProcess(p_process, diskNum);
+  if(diskNum >= 0 && diskNum < mMemManager.GetNumDisks()){
+    Process *p_process = mScheduler.DequeueProcess();
+    mMemManager.InsertDiskProcess(p_process, diskNum);
+  }
 }
 // Dequeu's process from disk and send back to scheduler
 void OperatingSystem::FinishHardDisk(size_t diskNum){
-  Process *p_process = mMemManager.RemoveDiskProcess(diskNum);
-  mScheduler.EnqueueProcess(p_process);
+  if(diskNum >= 0 && diskNum < mMemManager.GetNumDisks()){
+    Process *p_process = mMemManager.RemoveDiskProcess(diskNum);
+    mScheduler.EnqueueProcess(p_process);
+  }
 }
 // Calls MemoryManager function
 void OperatingSystem::ShowHardDisks() const{
