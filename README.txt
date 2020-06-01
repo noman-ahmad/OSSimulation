@@ -1,9 +1,9 @@
 
 Instructions On Running Program:
-	1. make all  
-	2. ./bin/run_sim (must be done inside current directory, same as README.txt)
-	3. program executes 
-	4. remove object files and executables using make clean (if needed)
+1. make all  
+2. ./bin/run_sim (must be done inside current directory, same as README.txt)
+3. program executes 
+4. remove object files and executables using make clean (if needed)
 
 Quick Guide On File Structure: 
  - bin     : will contain the executable "run_sim" once all object files have been linked (part of make all)
@@ -18,9 +18,8 @@ Extra Notes:
   - Includes docs and sources to coding style guides used throughout this project. 
   - Note: all source and header files have been commented thoroughly on their own. 
 
-Created By Noman Ahmad 
-Class: CSCI 340 Operating Systems, Professor Pavel Shostak 
+Created By Noman Ahmad  
 Programming Langauage Used: C++11 
-Date Finished: 05/12/2020 
+
 
 
