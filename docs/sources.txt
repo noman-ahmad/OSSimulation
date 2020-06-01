@@ -1,0 +1,8 @@
+
+Sources Used For This Project:
+ - C++ Coding Style Resource Used : 
+	https://users.ece.cmu.edu/~eno/coding/CppCodingStandard.html
+	See attached file from : chast.cs.ox.ac.uk (styleguide.pdf), the guide I follow throughout project
+ - Resources For Making a Makefile : 
+	https://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/ 
+        https://www.cs.bu.edu/teaching/cpp/writing-makefiles/
