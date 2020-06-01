@@ -1,4 +1,12 @@
-Foreword: Please Use Unix/Linux/Mac Operating Systems (or similar) that support g++11 and make 
+Operating System Simulator: 
+- This Project simulates an Operating System by using two of its main components, The CPU Scheduler and 
+  the Memory Manager. These will perform various operations on different processes that enter the system. 
+- The System can have large RAM sizes and many Input/Output Devices (HDDs) as per user desired input. 
+- The System performs First-Fit Contiguous Memory Allocation Scheme. 
+- The System uses Round-Robin CPU Scheduling Algorithm. 
+- Below are instructions to compile and run this simulation. 
+
+Compiling Foreword: Please Use Unix/Linux/Mac Operating Systems (or similar) that support g++11 and make 
 
 Instructions On Compiling Program: 
 1. make all  
