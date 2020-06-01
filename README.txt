@@ -1,11 +1,30 @@
+Foreword: Please Use Unix/Linux/Mac Operating Systems (or similar) that support g++11 and make 
 
-Instructions On Running Program:
+Instructions On Compiling Program: 
 1. make all  
 2. ./bin/run_sim (must be done inside current directory, same as README.txt)
 3. program executes 
 4. remove object files and executables using make clean (if needed)
 
-Quick Guide On File Structure: 
+Instructions on Running Program:
+1. Give desired RAM and Hard Disks to be simulated as asked (max size depends on size_t limit on architechture)
+2. Start Inputting A Series of Following Commands To Simulate the OS (capitals matter): 
+	a. A size (where size is a value within size_t ranges): create a new common process that needs 
+                   to use "size" memory.
+        b. AR size (where size is a value within size_t ranges): create a new real-time (priority) process that 
+                   needs to use "size" memory. 
+        c. Q : end time slice for currently running process. 
+        d. t : terminate the current running process.
+        e. d number (where number is a value within size_t ranges): The process that currently uses the 
+                    CPU requests to use the Hard Disk that is numbered "number". 
+        f. D number (where number is a value within size_t ranges): The process currently in Hard Disk 
+                    numbered "number" has finished its work. 
+        g. S r : show current state of CPU as well as both level's of the Ready Queue's (Common and RT).
+        h. S i : show which processes are using which hard disks (no output if hard disk is idle). 
+        i. S m : show's the current state of Memory and which Process's take up which ranges of addresses.
+3. ctrl+C to end program (runs indefinetely as you need it to). 
+
+Quick Guide On Project File Structure: 
  - bin     : will contain the executable "run_sim" once all object files have been linked (part of make all)
  - build   : will contain all object files once the source code has been compiled (part of make all)
  - include : contains header files for all the source files used in this project (class interfaces and function declerations)	
