@@ -1,9 +1,0 @@
-
-Here are some motivations for my design of this project, these are brief explanations on the choices made when designing my project. 
-
-1. When writing larger-scale programs with many abstractions, the goal is to minimize the amount of dependencies in the abstractions as that can lead to many problems with maintability of the code on the larger scale. I went in to this project with the mindset of creating as minimal dependent code as I code. In order to make full use of this I had to completely seperate interfaces for the Memory Manager abstraction and the CPU Scheduling abstraction. At no point does the Memory Manager or CPU Scheduler components of my simulated Operating System make any direct contact with the other. For example, if the user signals that the current running process needs to do I/O, the Scheduler does not call the Memory Manager explicitly and add process to any of the I/O queues. Doing so, would make the CPU Scheduler dependant on the Memory Manager and the same can be applied from the other side. This way, the CPU Scheduler and Memory Manager can be used seperately and work as intended. 
-
-2. Now that I have made sure the main componenets of my program are as independently designed as possible, the goal was to bring them together using the Operating System abstraction. Now whenever an instruction is needed to be performed in the larger scale of the system simulation, the OS mitigates any possible interaction that the two componenets could have had. For example, If the User signals that the current running process needs to do I/O. The System abstraction asks the CPU Scheduler to end the process and return it to the system, then the system sends that process to the Memory Manager so that it can insert it into the I/O Queue. Again, no direct contact was made between Scheduler and Memory Manager, the Operating System handles it (as it would in real systems programming). 
-
-
-
