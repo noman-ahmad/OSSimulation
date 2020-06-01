@@ -1,8 +1,7 @@
 /**************************************************
 File Name: Scheduler.hpp
 Author: Noman Ahmad
-Purpose: CSCI 340 Home Project
-Date Last Modified: 05/10/2020
+Date Last Modified: 05/31/2020
 Synopsis: Abstraction for a CPU Scheduler
           class that uses round robin scheduling
           algorithm to give processes time

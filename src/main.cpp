@@ -1,8 +1,7 @@
 /*****************************************
 File Name: main.cpp
 Author: Noman Ahmad
-Purpose: CSCI 340 Home Project
-Date Last Modified: 05/12/2020
+Date Last Modified: 05/31/2020
 Synopsis: driver code that runs our
           operating system simulation
 *****************************************/

@@ -1,8 +1,7 @@
 /**************************************************
 File Name: MemoryManager.hpp
 Author: Noman Ahmad
-Purpose: CSCI 340 Home Project
-Date Last Modified: 05/10/2020
+Date Last Modified: 05/31/2020
 Synopsis: Abstraction for a Hard Disk class,
           RandomAccessMemory class which are
           used by MemoryManager class to perform

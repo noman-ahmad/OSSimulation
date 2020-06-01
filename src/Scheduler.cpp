@@ -1,8 +1,7 @@
 /**************************************************
 File Name: Scheduler.cpp
 Author: Noman Ahmad
-Purpose: CSCI 340 Home Project
-Date Last Modified: 05/10/2020
+Date Last Modified: 05/31/2020
 Synopsis: Implementation for the CPU Scheduler
           class that uses round robin scheduling
           algorithm to give processes time
@@ -16,10 +15,8 @@ void CpuScheduler::EnqueueProcess(Process *pProcess){
   // Store In RT Queue if RT Process
   if(pProcess->IsRealTime()){
     mRtQueue.push(pProcess);
-    // std::cout << "Process Enqueued Into RT Level of Ready Queue" << std::endl;
   } else { // Store in Common Queue
     mCommonQueue.push(pProcess);
-    // std::cout << "Process Enqueued Into Common Level of Ready Queue" << std::endl;
   }
   pProcess->ChangeStatus(IN_READY_QUEUE); // Update Status of Process
   UpdateScheduler(); // Update Status of Scheduler
@@ -30,7 +27,6 @@ Process *CpuScheduler::DequeueProcess(){
   mpCurrentlyUsing = nullptr; // remove currently using process
   UpdateScheduler(); // will add the next available process (if exists)
   pProcess->ChangeStatus(IDLE); // change status of process to IDLE
-  // std::cout << "Process Is No Longer Using the CPU" << std::endl;
   return pProcess; // returns back to the System
 }
 
@@ -38,9 +34,7 @@ void CpuScheduler::RoundRobin(){
   if(mpCurrentlyUsing != nullptr){ // if cpu isn't idle
     Process *pProcess = DequeueProcess(); // Dequeue Running Process
     EnqueueProcess(pProcess); // Enqueue it At the End
-    // std::cout << "Round Robin Performed Successfully" << std::endl;
   } else {
-    // std::cout << "CPU is idle, Round Robin cannot be performed" << std::endl;
   }
 }
 
@@ -59,7 +53,6 @@ void CpuScheduler::UpdateScheduler(){
       mpCurrentlyUsing = pProcess;
       pProcess->ChangeStatus(USING_CPU); // process is now using CPU
     } else {
-    //   std::cout << "CPU is Idle and Ready Queues Are Empty, Nothing to Update" << std::endl;
     }
   } else if(!mpCurrentlyUsing->IsRealTime()){ // if currenlt using process is a common process
     if(!mRtQueue.empty()){ // if the rt queue has a process in it

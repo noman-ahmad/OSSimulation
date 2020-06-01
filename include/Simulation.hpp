@@ -1,8 +1,7 @@
 /**************************************************
 File Name: Simulation.hpp
 Author: Noman Ahmad
-Purpose: CSCI 340 Home Project
-Date Last Modified: 05/10/2020
+Date Last Modified: 05/31/2020
 Synopsis: A few function protypes used for reading
           and parsing the input from user and handling
           proper functions based on input

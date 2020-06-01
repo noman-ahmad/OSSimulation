@@ -1,8 +1,7 @@
 /**************************************************
 File Name: MemoryManager.cpp
 Author: Noman Ahmad
-Purpose: CSCI 340 Home Project
-Date Last Modified: 05/10/2020
+Date Last Modified: 05/31/2020
 Synopsis: Implementation for a Hard Disk class,
           RandomAccessMemory class which are
           used by MemoryManager class to perform
@@ -17,7 +16,6 @@ HardDisk::HardDisk(size_t DiskNumber): mDiskNumber{DiskNumber}, mpDoingIo{nullpt
 
 void HardDisk::EnqueueProcess(Process *pProcess){
   if(pProcess == nullptr){   // cant enqueue a pointer to non-existing process
-    //std::cout << "invalid process to insert, returning..." << std::endl;
   } else if(mpDoingIo == nullptr && mIoQueue.empty()){ // if the disk is empty and disk queue is empty
     mpDoingIo = pProcess;
     pProcess->ChangeStatus(USING_DEVICE); // process starts using the device
@@ -30,7 +28,6 @@ void HardDisk::EnqueueProcess(Process *pProcess){
 Process* HardDisk::DequeueProcess(){
   Process *p_process;
   if(mpDoingIo == nullptr && mIoQueue.empty()){ // case if hard disk is empty
-    //std::cout << "hard disk i/o queue is empty, ... returning" << std::endl;
     p_process = nullptr; // return a nullptr in that case
   } else if(mIoQueue.empty()){ // if theres a process running but the i/o queue is empty
     p_process = mpDoingIo;
