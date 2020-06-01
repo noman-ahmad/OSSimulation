@@ -1,0 +1,21 @@
+This provides a quick explanation for the deisgn of this project as well as motivations for deisgn choices.
+
+Foreword: as a novice programming student, all of my previous personal projects were organized and designed very poorly, so I went 
+          into this project with the design as one of the main things I want to focus on from the beginning, and that included keeping 
+          code dependability at the very minimum. All of these design choices were meant to keep the dependability at the very least 
+          that it could possibly be. 
+          note: dependency refers to code dependency not architechture dependency
+
+1. The main way to write the different abstractions of this program while avoiding code dependency, I had to make sure that the two 
+   major components (The CPU Scheduler and Memory Manager) abstractions were completely independently implemented. There are 0 lines 
+   of code in this project in which the CPU scheduler's code calls the Memory Manager component's code (or vice-versa). The result of
+   doing this, is that at any point either of these two compoenents code can be used independently. More importantly, changes can be 
+   made without risk of having made fatal errors that cause the entire program to stop functioning properly. 
+
+2. For the sake of this program and what it is trying to acheive, the Operating System component abstraction is what is reposnsible for 
+   handling any instruction from the user that involves both CPU Scheduler functionality and Memory Manager functionality. While in essense, 
+   this is causing the OS to be dependent on the two components but in a real Operating System that is what it does. The Memory Manager and 
+   CPU Scheduler's (and other OS components) in a real system don't interact much to avoid causing inflicting the entire system. 
+
+
+ 
